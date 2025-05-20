@@ -32,17 +32,20 @@ int main(void)
     
     while(x = 1) {
         yeux = ultrason_distance();
-        if (yeux <= 10) {
-            buzzer_sing(SING_CONFUSED);
+        if (yeux < 10) {
+            buzzer_tone(NOTE_C3,100,0); 
         }
-        else if (yeux == 10) {
+        else if (yeux < 15 ) {
             buzzer_sing(SING_OHOOH);
         }
-        else if (yeux >= 10) {
-            buzzer_sing(SING_DISCONNECTION);
+        else if (yeux < 20) {
+            buzzer_sing(SING_HAPPY);
+        }
+        else if (yeux >= 20){
+            buzzer_tone(NOTE_C7,50,0);
+        }
         }
     }
-}
 //----------------------------------------------------------
 // FIN DU CODE
 //----------------------------------------------------------
