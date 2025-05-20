@@ -16,6 +16,7 @@
 //----------------------------------------------------------
 // MAIN APPLICATION
 //----------------------------------------------------------
+
 int main(void)
 {
     //----------------------------------------------------------
@@ -25,13 +26,21 @@ int main(void)
     // VOTRE CODE CI-DESSOUS
     // INSTRUCTIONS EXECUTEES UNE SEULE FOIS AU DEMARRAGE
     //----------------------------------------------------------
+    int x;
+    float yeux;
+    x = 1;
     
-    while(1){
-        //----------------------------------------------------------
-        // VOTRE CODE CI-DESSOUS
-        // INSTRUCTIONS EXECUTEES EN BOUCLE INDEFINIMENT
-        //----------------------------------------------------------
-        
+    while(x = 1) {
+        yeux = ultrason_distance();
+        if (yeux <= 10) {
+            buzzer_sing(SING_CONFUSED);
+        }
+        else if (yeux == 10) {
+            buzzer_sing(SING_OHOOH);
+        }
+        else if (yeux >= 10) {
+            buzzer_sing(SING_DISCONNECTION);
+        }
     }
 }
 //----------------------------------------------------------
